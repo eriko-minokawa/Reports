@@ -153,6 +153,10 @@ public class EmployeeService extends ServiceBase {
         savedEmp.setAdminFlag(ev.getAdminFlag()); //変更後の管理者フラグを設定する
 
         //更新日時に現在時刻を設定する
+        LocalDateTime today = LocalDateTime.now();
+        savedEmp.setUpdatedAt(today);
+
+      //更新内容についてバリデーションを行う
         List<String> errors = EmployeeValidator.validate(this, savedEmp, validateCode, validatePass);
 
         //バリデーションエラーがなければデータを更新する

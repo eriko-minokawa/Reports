@@ -182,7 +182,8 @@ public class EmployeeAction extends ActionBase {
                 return;
             }
             putRequestScope(AttributeConst.TOKEN,getTokenId()); //CSRF対策用トークン
-            putRequestScope(AttributeConst.EMPLOYEE,ev); //取得した従業員情報
+            putRequestScope(AttributeConst.EMPLOYEE, ev); //取得した従業員情報
+
 
             //編集画面を表示する
             forward(ForwardConst.FW_EMP_EDIT);
